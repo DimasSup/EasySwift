@@ -7,10 +7,10 @@
 
 import UIKit
 
-public typealias AttributedString = NSMutableAttributedString
+public typealias ESAttributedString = NSMutableAttributedString
 
 
-extension AttributedString {
+extension ESAttributedString {
     
     public convenience init(_ str: String = "") {
         self.init(string: str)
@@ -77,21 +77,21 @@ extension AttributedString {
     }
 }
 
-public func + (l: AttributedString, r: AttributedString) -> AttributedString {
-    AttributedString(attributedString: l) ~ { $0.append(r) }
+public func + (l: ESAttributedString, r: ESAttributedString) -> ESAttributedString {
+	ESAttributedString(attributedString: l) ~ { $0.append(r) }
 }
 
 
 extension String {
     
-    public var attributed: AttributedString {
-        AttributedString(self)
+    public var attributed: ESAttributedString {
+		ESAttributedString(self)
     }
 }
 extension NSAttributedString {
     
-    public var mutable: AttributedString {
-        AttributedString(attributedString: self)
+    public var mutable: ESAttributedString {
+		ESAttributedString(attributedString: self)
     }
 }
 
